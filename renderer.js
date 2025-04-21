@@ -5,6 +5,21 @@ window.addEventListener('DOMContentLoaded', () => {
   const bodyTbl = document.getElementById('payments');
   const limitF = document.getElementById('limit-date');
 
+  const idField = document.getElementById('pay-id');
+  // const srcF = document.getElementById('source');
+  // const amtF = document.getElementById('amount');
+  // const dateF = document.getElementById('date');
+  // const monthsF = document.getElementById('months');
+  // const pauseF = document.getElementById('pause');
+  // const batchSrc = document.getElementById('batch-source');
+  // const batchAmt = document.getElementById('batch-amount');
+  // const batchStart = document.getElementById('batch-start');
+  // const batchEnd = document.getElementById('batch-end');
+  // const batchBtn = document.getElementById('batch-update');
+  // const setLimitBtn = document.getElementById('set-limit');
+  // const balP = document.getElementById('balance');
+  // const body = document.getElementById('payments');
+
   // Modal
   const modal = document.getElementById('modal');
   document.getElementById('open-batch').onclick = () => modal.style.display = 'flex';
@@ -80,7 +95,7 @@ window.addEventListener('DOMContentLoaded', () => {
     cancelBtn.style.display = '';
   }
 
-  cancelBtn.onclick = () => { form.reset(); cancelBtn.style.display='none'; };
+  cancelBtn.onclick = () => { form.reset(); idField.value=''; cancelBtn.style.display='none'; };
 
   // Soumission du formulaire principal
   form.onsubmit = async e => {
@@ -95,8 +110,9 @@ window.addEventListener('DOMContentLoaded', () => {
     };
     if (data.id) await window.api.updatePayment(data);
     else await window.api.createPayment(data);
-    form.reset(); cancelBtn.style.display='none';
+    form.reset(); idField.value=''; cancelBtn.style.display='none';
     refreshAll();
+    console.log("je reset");
   };
 
   // Mise à jour en masse
