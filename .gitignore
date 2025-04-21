@@ -1,0 +1,9 @@
+# Ignorer les builds
+dist/
+build/
+
+# Ignorer les dépendances
+node_modules/
+
+# Ignorer le dossier .git si jamais il est copié manuellement dans un autre dossier
+.git/

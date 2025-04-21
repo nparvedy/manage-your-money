@@ -1,0 +1,32 @@
+{
+  "name": "manageyourmoney",
+  "version": "1.0.0",
+  "description": "App qui apprends à gérer son argent",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1",
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "author": "nicolas parvedy",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "electron": "^35.2.0",
+    "electron-builder": "^26.0.12",
+    "electron-rebuild": "^3.2.9",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.4"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.9.1",
+    "sqlite3": "^5.1.7"
+  },
+  "build": {
+    "appId": "com.parvedy.manageyourmoney",
+    "productName": "Manage your money",
+    "win": {
+      "target": "nsis"
+    }
+  }
+}
